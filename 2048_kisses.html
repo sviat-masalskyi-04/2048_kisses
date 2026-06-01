@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2048 kisses!</title>
+    <style>
+        body {
+                margin: 0;
+                min-height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .main {
+                max-width: 500px;
+                width: 100%;
+                padding: 30px;
+
+                border: 1px, solid, black;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                text-align: center;
+            }
+            .hidden {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p id="msg">Grab you gisses!</p>
+        <button id="btn" onclick="kissTime()">Kiss me!</button>
+        <div id="kissesOutput"></div>
+    </div>
+    <script>
+        let kissesOutput = document.getElementById("kissesOutput");
+        let kiss = "Цемаю 😘💋 "
+        function kissTime() {
+            kissesOutput.innerText = kiss.repeat(2**11);
+            let btn = document.getElementById("btn");
+            btn.classList.add("hidden");
+            let msg = document.getElementById("msg");
+            msg.classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
